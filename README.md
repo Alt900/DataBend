@@ -25,8 +25,10 @@ Currently, due to a sparse C++ back-end, the only type of supported JSON structu
 ```
 
 
- Additionally, JSON files must be placed in the datafile subdirectory in order for the Crow API to access the files.
+ Additionally, JSON files must be placed in the `Datafiles` subdirectory in order for the Crow API to access the files. If there is no `Datafiles` directory, one will have to be created manually for now.
 
+## Installation and setup
+The only installation that needs to be made are the node packages, which can be installed with `npm i` inside of the `DataBend` directory. From here the application can be ran by executing the `StartApp.bat` script for Windows and the `StartApp.bash` script for Linux. 
 
 ## Using the JSON component
 1.1: To load a data file, you can click the "Select data file" button, and it will prompt you to navigate to the targeted file.
