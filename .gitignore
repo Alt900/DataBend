@@ -1,6 +1,7 @@
 **/.vs/
 **/.vscode/
 **/x64/
+**/.ipynb_checkpoints/
 **/node_modules/
 **/.angular/
 **/.ipynb_checkpoints/
@@ -8,3 +9,4 @@
 *.vcxproj
 *.vcxproj.filters
 *.vcxproj.user
+*.ipynb
