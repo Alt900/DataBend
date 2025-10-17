@@ -1,0 +1,61 @@
+
+<div class="DashboardContainer">
+    <div class="InnerDashboard">
+        <div class="InnerDashboardBackground"></div>
+        <div class="JSONEditorContainer">
+            <div class="ToolBars">
+                <div class="JSONFileSelectContainer">
+                    <h3 class="JSONFileSelectLabel">Select datafile</h3>
+                    <input class="JSONFileSelect" type="file" (change)="FetchJSONFile($event)"/>
+                </div>
+                <mat-form-field class="ToolbarInputContainer" [style.left]="'20%'">
+                    <mat-label class="M3HeightOverwrite">Jump to entry:</mat-label>
+                    <input 
+                        matInput 
+                        (keyup.enter)="JumptoEntry()" 
+                        [(ngModel)]="JSONJumpToEntryInput" 
+                        [style.height]="'80%'" 
+                        (change)="SanitizeEntryInput($event)"/>
+                </mat-form-field>
+                <mat-form-field [style.width]="'35%'" class="ToolbarInputContainer" [style.left]="'42%'">
+                    <mat-label class="M3HeightOverwrite">Filename:</mat-label>
+                    <button (click)="SaveSaveAs()" class="SaveSaveAsButton">Save | Save As ...</button>
+                    <input matInput [value]="TempActiveFileName" [(ngModel)]="TempActiveFileName">
+                </mat-form-field>
+                @if(SaveNotification){
+                    <div class="SaveNotification">
+                        <p>{{SaveNotificationMessage}}</p>
+                    </div>
+                }
+            </div>
+            <textarea id="JSONTextArea" class="JSONEditor" [value]="JSONEditorSring"></textarea>    
+        </div>
+        <div class="D3Container">
+            <div class="ToolBars">
+                <mat-form-field class="ToolbarInputContainer">
+                    <mat-label class="M3HeightOverwrite">Rendered Variables</mat-label>
+                    <mat-select multiple (selectionChange)="HandleVariableChange($event.value)">
+                        @for(VariableOption of GlobalStateManagerObject.CurrentTotalLabelSet; track VariableOption){
+                            <mat-option [value]="VariableOption">{{VariableOption}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="ToolbarInputContainer" [style.left]="'25%'">
+                    <mat-label class="M3HeightOverwrite">Rendered Metrics</mat-label>
+                    <mat-select multiple>
+                        @for(MetricDrawOption of GlobalStateManagerObject.MetricDictKeys; track MetricDrawOption){
+                            <mat-option 
+                            [value]="MetricDrawOption" 
+                            (onSelectionChange)="ChartManagerObject.HandleMetricsDraw(MetricDrawOption)"
+                            >{{MetricDrawOption}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="D3CavnasContainer">
+                <svg class="D3Cavnas" #D3ChartsSVG></svg>
+                <svg class="D3SecondaryCanvas" #D3SecondaryChartSVG></svg>
+            </div>
+        </div>
+    </div>
+</div>

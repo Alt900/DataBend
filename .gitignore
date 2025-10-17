@@ -1,0 +1,10 @@
+**/.vs/
+**/.vscode/
+**/x64/
+**/node_modules/
+**/.angular/
+**/.ipynb_checkpoints/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user

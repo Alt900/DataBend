@@ -1,0 +1,10 @@
+@import "../theme.css";
+:root{
+    --main-green: #333333; /* 004a34 */
+    --secondary-green: #545454;/* 00635d */
+    --background-color: #040706;/* 040706 */
+    --hires-text-color: #9e9e9e;/* 00ff00 */
+    --lowres-text-color: #1f1f1f;/* 009600 */
+}
+html, body { height: 100%; overflow: hidden; background: #00050a;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}

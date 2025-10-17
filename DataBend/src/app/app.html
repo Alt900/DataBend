@@ -1,0 +1,42 @@
+<div class="ControlBoxContainer">
+    <div class="MetricDictObjectEditorContainer">
+        <textarea class="MetricDictObjectEditor" [value]="MetricDictJSONString"></textarea>
+        <button class="InjectMetricDictButton" (click)="InjectMetricDict()">Inject into dataset</button>
+        @if(InjectionNotification){
+            <div class="InjectionNotification">
+                <p>Injected the dictionary into the loaded dataset</p>
+            </div>
+        }
+    </div>
+    <div class="CalculatedMetricsList">
+        <ul class="MetricsListElement">
+            @for(Calculated of GlobalStateManagerObject.MetricDictKeys; track Calculated; let i=$index){
+                <li>{{Calculated.replaceAll("_"," ")}} :</li>
+                <ul>
+                    @for(Var of GlobalStateManagerObject.CurrentLabelSet; track Var; let j = $index){
+                        <li>{{Var}} : {{GlobalStateManagerObject.MetricDict[Calculated][j]}}</li>
+                    }
+                </ul>
+                <br/>
+            }
+        </ul>
+    </div>
+    <div class="MetricsMenuContainer">
+        <mat-label class="MetricsMenuLabel">Features</mat-label>
+        <mat-expansion-panel hideToggle class="MetricMenuExpansionPannel">
+            <mat-expansion-panel-header>
+                <mat-panel-title>Descriptive Statistics</mat-panel-title>
+            </mat-expansion-panel-header>
+            @for(MetricOption of DescriptiveStatistics; track MetricOption; let i=$index){
+                <div 
+                    [style.top]="`${GenerateAccumulatedPosition()}%`"
+                    class="MetricOptionButtonContainer">
+                    <button (click)="UpdateCalculatedMetrics(i)" class="MetricOptionButton">{{MetricOption.replaceAll("_"," ")}}</button>
+                </div>
+            }
+        </mat-expansion-panel>
+        <ng-container>{{ResetAccumulator()}}</ng-container>
+    </div>
+    <!--for future parameterized calculations ... add a pop-up container here-->
+</div>
+<app-dashboard/>

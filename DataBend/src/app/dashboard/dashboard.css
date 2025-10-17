@@ -1,0 +1,281 @@
+.DashboardContainer{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 67%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+}
+
+.InnerDashboardBackground{
+    position: absolute;
+    display: flex;
+    background-color: var(--background-color);
+    border-radius: 1rem; 
+    width: 100%;
+    height: 100%;
+}
+
+
+.InnerDashboard{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color);
+    border-radius: 1rem; 
+    height: 100%;
+    width: 100%; 
+    top: 0;
+    left: 0;
+}
+
+.ToolbarButtonContainer{
+    display: flex;
+    position: absolute;
+    top: 3%;
+    height: 75%;
+    width: 15%;
+    border-radius: 1rem;
+    padding: 0.25rem;
+    align-items: center;
+    background-color: var(--background-color);
+    background-position: 100% 0;
+}
+
+.ToolbarButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 90%;
+    left: 2.5%;
+    width: 95%;
+    background: var(--background-color); 
+    border: 2px solid var(--main-green);
+    border-radius: 1rem;
+    color: var(--hires-text-color);
+}
+
+.JSONFileSelectContainer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 2.5%;
+    top: 4%;
+    height: 86%;
+    width: 15%;
+    background: var(--background-color); 
+    border-radius: 1rem;
+    border: 2px solid var(--lowres-text-color);
+}
+
+.JSONFileSelectLabel{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    color: var(--hires-text-color);
+    font-size: medium;
+}
+
+.JSONFileSelect{
+    position: absolute;
+    display: flex;
+    font-size: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 1rem;
+}
+
+.JSONFileSelect::file-selector-button{
+    background: var(--background-color); 
+    width: 100%;
+    color: var(--hires-text-color);
+    border: none;
+}
+
+.JSONFileSelect:hover{
+    animation: PulsingBoxShadow 0.25s ease;
+    animation-fill-mode: forwards;
+}
+
+.ToolbarInputContainer{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 145%;
+    left: 2.5%;
+    width: 20%;
+}
+
+.SaveSaveAsButton{
+    position: absolute;
+    display: flex;
+    border: none;
+    border-bottom: 2px solid var(--main-green);
+    border-radius: 1rem;
+    color: var(--hires-text-color);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    width: 50%;
+    height: 40%;
+    top: 5%;
+    left: 20%;
+}
+
+.SaveSaveAsButton:hover{
+    border-top: 2px solid var(--hires-text-color);
+    border-bottom: none;
+}
+
+.SaveNotification{
+    position: absolute;
+    display: flex;
+    border: 2px solid var(--main-green);
+    color: var(--hires-text-color);
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    width: 40%;
+    height: 75%;
+    bottom: -100%;
+    left: 42%;
+}
+
+.JSONEditorContainer{
+    display: flex;
+    position: absolute;
+    height: 91%;
+    width: 47%;
+    left: .5%;
+    top: 2%;
+    border-radius: 1rem; 
+    border: 2px solid var(--secondary-green);
+    padding: 1rem; 
+    background-color: var(--lowres-text-color); 
+}
+
+.JSONEditorToolbarContainer{
+    position: absolute;
+    display: flex;
+    border-radius: 1rem;
+
+}
+
+.JSONEditor{
+    position: absolute;
+    display: flex;
+    resize: none;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--hires-text-color);
+    background-color: transparent;
+    bottom: 0;
+    width: 96%;
+    height: 90%;
+}
+
+.JSONEditor:focus{
+    border: none;
+    outline: none;
+}
+
+.D3Container{
+    position: absolute;
+    display: flex;
+    height: 91%;
+    width: 47%;
+    right: .5%;
+    top: 2%;
+    border-radius: 1rem; 
+    padding: 1rem; 
+    border: 2px solid var(--secondary-green);
+    background-color: var(--lowres-text-color);
+}
+
+.ToolBars{
+    position: absolute;
+    display: flex;
+    top: -1%;
+    left: -.3%;
+    width: 100%;
+    height: 8%;
+    border: 2px solid var(--secondary-green); 
+    background-color: var(--background-color);
+    border-radius: 1rem; 
+}
+
+.D3CavnasContainer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 91%;
+    background-color: transparent;
+}
+
+.D3Cavnas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.D3SecondaryCanvas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: transparent;
+}
+
+.M3HeightOverwrite{height: 20%;}
+
+@keyframes PulsingBoxShadow {
+    0%{
+        box-shadow: 0px 0px 1px var(--hires-text-color);
+    }
+    10%{
+        box-shadow: 0px 0px 2px var(--hires-text-color);
+    }
+    20%{
+        box-shadow: 0px 0px 3px var(--hires-text-color);
+    }
+    30%{
+        box-shadow: 0px 0px 4px var(--hires-text-color);
+    }
+    40%{
+        box-shadow: 0px 0px 5px var(--hires-text-color);
+    }
+    50%{
+        box-shadow: 0px 0px 6px var(--hires-text-color);
+    }
+    60%{
+        box-shadow: 0px 0px 7px var(--hires-text-color);
+    }
+    70%{
+        box-shadow: 0px 0px 8px var(--hires-text-color);
+    }
+    80%{
+        box-shadow: 0px 0px 9px var(--hires-text-color);
+    }
+    90%{
+        box-shadow: 0px 0px 10px var(--hires-text-color);
+    }
+    100%{
+        box-shadow: 0px 0px 11px var(--hires-text-color);
+    }
+}
